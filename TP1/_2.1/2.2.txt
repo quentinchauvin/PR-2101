@@ -1,0 +1,4 @@
+Pour calculer la valeur de la resistance correspondant à la led nous effectuons 
+le calcul suivant :
+
+R = (Ualim - Uled) / Iled = (5 - 2,2) / 0,01 = 280 ohms.	
