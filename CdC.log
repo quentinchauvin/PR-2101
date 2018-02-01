@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.25)  1 FEB 2018 13:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.1.25)  1 FEB 2018 14:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -552,28 +552,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout3 = `CdC.toc'.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 22.
- [1
+(Font)              <10> on input line 16.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 16.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 16.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./CdC.aux) ) 
+! Too many }'s.
+l.29 }
+      
+? 
+! Emergency stop.
+l.29 }
+      
+End of file on the terminal!
+
+ 
 Here is how much of TeX's memory you used:
- 2558 strings out of 494902
- 33713 string characters out of 6179582
+ 2567 strings out of 494902
+ 33807 string characters out of 6179582
  95199 words of memory out of 5000000
- 5854 multiletter control sequences out of 15000+600000
- 52301 words of font info for 40 fonts, out of 8000000 for 9000
+ 5860 multiletter control sequences out of 15000+600000
+ 59482 words of font info for 46 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 30i,6n,30p,300b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/t
-exmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx1
-0.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/font
-s/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb>
-Output written on CdC.pdf (1 page, 168252 bytes).
-PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 30i,6n,30p,297b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
