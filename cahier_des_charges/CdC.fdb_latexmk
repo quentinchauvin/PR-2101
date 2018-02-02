@@ -1,0 +1,32 @@
+# Fdb version 3
+["dvipdf"] 0 "CdC.dvi" "CdC.pdf" "CdC" 0
+  "CdC.dvi" 0 -1 0 "latex"
+  (generated)
+  "CdC.pdf"
+["latex"] 1517595529 "CdC.tex" "CdC.dvi" "CdC" 1517595529
+  "/etc/texmf/web2c/texmf.cnf" 1517488370 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1136768653 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
+  "/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty" 1456440043 13499 cfeb1da37929c37eb2a356b8abd63f74 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1454284088 20708 39fdf9e2fb65617012fa7382a351f485 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty" 1454284088 4572 634fcdf7e9df867d6d54f84638930408 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty" 1454284088 5619 b1e63522e111972696a4db609d2b915f ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu" 1454284088 2006 ed35f065eb949f203d1b6acd2bc1dcb8 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu" 1454284088 3183 76313d3584eba6cfdb7421aa6c69c2dd ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo" 1454284088 9195 7ea0b8c33c5eac1952bee6ba996008f6 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def" 1454284088 9927 925418b4e40d02671b4728df100ec5ef ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu" 1454284088 10900 d4e94223e6330199a3b8e8abe87fe6e1 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty" 1454284088 16155 3b0b2cc7c05e0ccf8c3ce5da21d4bccb ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def" 1454284088 7767 aa88823823f5e767d79ea1166ab1ae74 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu" 1454284088 4921 a866f1ba34e2e7c3c432f93fbf17e82b ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def" 1454284088 7786 ea3c60942da10fcdcdb0bcbd1671de4e ""
+  "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
+  "/usr/share/texmf/tex/latex/lm/lmodern.sty" 1256929440 1606 c17281c7cff2bbd7ff0173e1433487ec ""
+  "/usr/share/texmf/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
+  "/var/lib/texmf/web2c/pdftex/latex.fmt" 1517488387 718424 a785a765991cd63ee711a49b30f1c537 ""
+  "CdC.aux" 1517499318 88 8cd6dbd28352fdc346ab77753efc5939 ""
+  "CdC.tex" 1517595529 1457 03303fa2d949d285cd8196c7254cf9f7 ""
+  (generated)
+  "CdC.dvi"
+  "CdC.log"
