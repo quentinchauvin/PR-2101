@@ -1,5 +1,0 @@
-\select@language {french}
-\contentsline {section}{\numberline {1}Adaptation du projet sur un projet d\IeC {\'e}j\IeC {\`a} existant}{1}
-\contentsline {section}{\numberline {2}Utilistation de solutions techniques d\IeC {\'e}j\IeC {\`a} existantes}{1}
-\contentsline {section}{\numberline {3}Descrition des contraintes}{1}
-\contentsline {section}{\numberline {4}Prise en charge des co\IeC {\^u}ts}{1}
