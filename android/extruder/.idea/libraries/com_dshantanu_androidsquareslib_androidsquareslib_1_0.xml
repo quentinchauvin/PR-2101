@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.dshantanu.androidsquareslib:androidsquareslib-1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/androidsquareslib-1.0.aar/f40500ca3b5fc82755d27024b8d5383c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/androidsquareslib-1.0.aar/f40500ca3b5fc82755d27024b8d5383c/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.dshantanu.androidsquareslib/androidsquareslib/1.0/c36c6644989a15b1df39294780e7882dd7632146/androidsquareslib-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
