@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.dshantanu.androidsquareslib:androidsquareslib-1.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/androidsquareslib-1.0.aar/f40500ca3b5fc82755d27024b8d5383c/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/androidsquareslib-1.0.aar/f40500ca3b5fc82755d27024b8d5383c/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/androidsquareslib-1.0.aar/c5cfa45d268405b0700cfc3fa734f248/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/androidsquareslib-1.0.aar/c5cfa45d268405b0700cfc3fa734f248/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

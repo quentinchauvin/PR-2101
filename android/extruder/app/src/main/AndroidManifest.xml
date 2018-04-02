@@ -14,14 +14,21 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/MinTheme">
+            android:label=""
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".FeedbackActivity"
+            android:theme="@style/MinTheme" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/SignInTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FeedbackActivity"></activity>
     </application>
 
 </manifest>

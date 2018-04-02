@@ -1,0 +1,17 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="coucou"
+        app:actionLayout="@layout/ignore"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_skip"
+        android:iconTint="#ffffff"
+        android:icon="@drawable/ic_arrow_forward_white"
+        app:showAsAction="ifRoom"
+        android:title="skip"
+        tools:ignore="HardcodedText" />
+</menu>

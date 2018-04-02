@@ -1,5 +1,7 @@
 package pr_2101.josselin.extruder;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
@@ -12,7 +14,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.Window;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -39,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (device.getName() != null && !mBtDevices.contains(device)) {
                     mBtDevices.add(device);
+                    if (mBtDevices.size()==1) showProgress(false);
 
                     Log.wtf("0", device.getName());
                     Log.wtf("1", device.getAddress());
@@ -87,15 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         mBluetoothAdapter.startDiscovery();
-
-        /*findViewById(R.id.my_text_view).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i("Click", "Start discovery");
-                mBluetoothAdapter.startDiscovery();
-
-            }
-        });*/
     }
 
     @Override
@@ -111,16 +109,52 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (BluetoothUtils.REQUEST_CODE_ENABLE_BT == requestCode) {
             if (resultCode == RESULT_OK) {
-                Log.e("RequestEnableBT", "Success");
+                Log.i("RequestEnableBT", "Success");
 
                 mBluetoothAdapter.startDiscovery();
-                //BtScanThread btScanThread = new BtScanThread(mBluetoothAdapter);
-                //btScanThread.run();
+                showProgress(true);
 
-            } else {
-                Intent enableBlueTooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                startActivityForResult(enableBlueTooth, BluetoothUtils.REQUEST_CODE_ENABLE_BT);
             }
+            else {
+                Intent intent = new Intent(this, FeedbackActivity.class);
+                startActivity(intent);
+            }
+
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        //mMenu = menu;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_scan, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_skip:
+                startActivity(new Intent(MainActivity.this, FeedbackActivity.class));
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void showProgress(final boolean show) {
+        int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
+
+        final ProgressBar progressBar = findViewById(R.id.progress);
+
+        progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
+        progressBar.animate().setDuration(shortAnimTime).alpha(
+                show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
+            }
+        });
     }
 }

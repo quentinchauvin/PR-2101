@@ -15,7 +15,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import pr_2101.josselin.extruder.ConnectThread;
 import pr_2101.josselin.extruder.R;
 
 
@@ -71,7 +70,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 BluetoothAdapter.getDefaultAdapter().cancelDiscovery();
                 /*ConnectThread connectThread = new ConnectThread(mBtDevices.get(position));
                 connectThread.run();*/
-                mBtDevices.get(position).createBond();
+                try {
+                    mBtDevices.get(position).createBond();
+                }
+                catch (Exception e){
+                    Log.e("creatBound", e.getMessage());
+                }
             }
         });
 
