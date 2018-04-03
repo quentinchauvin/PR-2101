@@ -36,7 +36,7 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 	//const score = event.data.val();
 	//console.log("Score is : ",score);
 	var tab = new Array();
-	int i = 0;
+	var i = 0;
 	firebase.database().ref("users").once("value").then(function(snapshot) {
     	snapshot.forEach(function(childSnapshot) {	
       	var key = childSnapshot.key;
