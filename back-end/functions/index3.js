@@ -42,9 +42,10 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
     	snapshot.forEach(function(childSnapshot) {	
       	var key = childSnapshot.key;
       	var childData = childSnapshot.val();
-	tab0[i] = key;
-	tab1[i] = childSnapshot.child("score").val();
+	/*tab0[i] = key;
+	tab1[i] = childSnapshot.child("score").val();*/
 	i++;
+	console.log("i : ", i);
       	console.log("Données de ",key," : ",childData);
 
 		var score = childSnapshot.child("score").val();
@@ -53,7 +54,7 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 	});
 
 	console.log("Fin de la recup de data");
-	var tab2 = [];
+	/*var tab2 = [];
 	var tab3 = [];
 	for (i=0; i<tab0.length; i++){
 	 	if (i==0){
@@ -70,7 +71,7 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 	console.log("tab");
 	for (i=0; i<tab2.length; i++) {	
 		console.log("Joueur : ",tab3[i] ,"Score : ", tab2[i]);	
-	}
+	}*/
 });
 
 function tabMax(tab){
