@@ -35,10 +35,14 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 
 	//const score = event.data.val();
 	//console.log("Score is : ",score);
+	var tab = new Array();
+	int i = 0;
 	firebase.database().ref("users").once("value").then(function(snapshot) {
-    	snapshot.forEach(function(childSnapshot) {
+    	snapshot.forEach(function(childSnapshot) {	
       	var key = childSnapshot.key;
       	var childData = childSnapshot.val();
+	tab[i] = childSnapshot;
+	i++;
       	console.log("Données de ",key," : ",childData);
 
 		var score = childSnapshot.child("score").val();
@@ -47,4 +51,24 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 	});
 
 	console.log("Fin de la recup de data");
+	var tab2 = new Array();
+	var maxsnp;
+	for (i=0, i<tab.length, i++) {
+		var snpv = 0;
+		if (i == 0) {
+			snpv = tab[i].child("score").val();
+			maxsnp = tab[i];
+		}
+		else {
+			if ( tab[i].child("score").val() > snpv){
+				snpv = tab[i].child("score").val();
+				maxsnp = tab[i];
+			}
+		}
+		tab2[i] = maxsnp;
+	}
+	console.log("Tableau :");
+	for (i=0, i<tab2.length, i++) {	
+		console.log(tab2[i].child("score").val());
+	}
 });
