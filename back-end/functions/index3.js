@@ -35,8 +35,8 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 
 	//const score = event.data.val();
 	//console.log("Score is : ",score);
-	var tab0 = new Array();
-	var tab1 = new Array();
+	var tab0 = [];
+	var tab1 = [];
 	var i = 0;
 	firebase.database().ref("users").once("value").then(function(snapshot) {
     	snapshot.forEach(function(childSnapshot) {	
@@ -53,8 +53,8 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 	});
 
 	console.log("Fin de la recup de data");
-	var tab2 = new Array();
-	var tab3 = new Array();
+	var tab2 = [];
+	var tab3 = [];
 	for (i=0; i<tab0.length; i++){
 	 	if (i==0){
 			tab2[i]=tab0[tabMax(tab0)];
