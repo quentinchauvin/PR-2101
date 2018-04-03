@@ -52,9 +52,22 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 
 	console.log("Fin de la recup de data");
 	var tab2 = new Array();
+	for (i=0, i<tab2.length, i++) {	
+		if(i==0)
+		tab2[i] = tabMax(tab);
+		else 
+		tab2[i] = tabMax(tab.splice(i,1));
+	}
+	console.log("tab");
+	for (i=0, i<tab2.length, i++) {	
+		console.log(tab2[i].child("score").val());	
+	}
+});
+
+function tabMax(tab){
 	var maxsnp;
+	var snpv;
 	for (i=0, i<tab.length, i++) {
-		var snpv = 0;
 		if (i == 0) {
 			snpv = tab[i].child("score").val();
 			maxsnp = tab[i];
@@ -65,10 +78,6 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 				maxsnp = tab[i];
 			}
 		}
-		tab2[i] = maxsnp;
 	}
-	console.log("Tableau :");
-	for (i=0, i<tab2.length, i++) {	
-		console.log(tab2[i].child("score").val());
-	}
-});
+	return maxsnp;
+}
