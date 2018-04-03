@@ -35,17 +35,17 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 
 	//const score = event.data.val();
 	//console.log("Score is : ",score);
-	var tab0 = [];
+	/*var tab0 = [];
 	var tab1 = [];
-	var i = 0;
+	var i = 0;*/
 	firebase.database().ref("users").once("value").then(function(snapshot) {
     	snapshot.forEach(function(childSnapshot) {	
       	var key = childSnapshot.key;
       	var childData = childSnapshot.val();
 	/*tab0[i] = key;
 	tab1[i] = childSnapshot.child("score").val();*/
-	i++;
-	console.log("i : ", i);
+	/*i++;
+	console.log("i : ", i);*/
       	console.log("Données de ",key," : ",childData);
 
 		var score = childSnapshot.child("score").val();
@@ -74,7 +74,7 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 	}*/
 });
 
-function tabMax(tab){
+/*function tabMax(tab){
 	var max;
 	var v;
 	for (i=0; i<tab.length; i++) {
@@ -88,4 +88,4 @@ function tabMax(tab){
 		}
 	}
 	return v;
-}
+}*/
