@@ -22,7 +22,8 @@
             android:theme="@style/MinTheme" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/SignInTheme">
+            android:theme="@style/SignInTheme"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

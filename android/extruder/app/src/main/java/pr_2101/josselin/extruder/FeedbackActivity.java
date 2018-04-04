@@ -35,6 +35,6 @@ public class FeedbackActivity extends AppCompatActivity {
                 "21/04", "01/05", "03/05", "22/05", "03/06","01/07", "03/08", "06/08", "09/08", "12/08", "15/08","01/01", "03/02", "06/02", "09/03", "12/03", "15/04", "18/04",
                 "21/04", "01/05", "03/05", "22/05", "03/06","01/07", "03/08", "06/08", "09/08", "12/08", "15/08"};
 
-        GraphUtils.configChart(chart, GraphUtils.CONFIG_COIL, meters, days);
+        GraphUtils.configChart(chart, GraphUtils.CONFIG_GAS, meters, days);
     }
 }

@@ -14,7 +14,6 @@
         <item name="colorPrimaryDark">#00695C</item>
         <item name="colorAccent">#ffffff</item>
         <item name="android:colorButtonNormal">#00695C</item>
-        <item name="android:background">#26A69A</item>
         <item name="android:textColor">#ffffff</item>
         <item name="android:textColorHint">#B2DFDB</item>
         <item name="colorControlNormal">#B2DFDB</item>

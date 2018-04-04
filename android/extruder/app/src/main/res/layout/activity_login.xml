@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/yo"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fitsSystemWindows="true"
-    android:theme="@style/SignInTheme">
+    android:background="#26A69A"
+    android:fitsSystemWindows="true">
+    <!--android:theme="@style/SignInTheme"-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,9 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
-                android:textColor="#B2DFDB"
-                android:inputType="text"
-                tools:ignore="TextFields" />
+                android:inputType="textEmailAddress"
+                android:textColor="#B2DFDB" />
         </android.support.design.widget.TextInputLayout>
 
         <!-- Password Label -->
@@ -43,25 +44,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#B2DFDB">
 
-            <EditText
+            <android.support.design.widget.TextInputEditText
                 android:id="@+id/input_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
-                android:textColorHint="#B2DFDB"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColorHint="#B2DFDB" />
         </android.support.design.widget.TextInputLayout>
 
-        <android.support.v7.widget.AppCompatButton
+        <!--<android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:layout_marginTop="24dp"
             android:padding="12dp"
-            android:text="@string/login" />
+            android:text="@string/login" />-->
+
+        <com.dd.CircularProgressButton
+            android:id="@+id/btnWithText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="24dp"
+            android:padding="12dp"/>
 
         <TextView
             android:id="@+id/link_signup"
@@ -73,5 +84,25 @@
             android:textColor="#B2DFDB"
             android:textSize="16sp" />
 
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </LinearLayout>
-</ScrollView>
+
+    <FrameLayout
+        android:id="@+id/ntb_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+    <devlight.io.library.ntb.NavigationTabBar
+        android:id="@+id/ntb"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom"/>
+    </FrameLayout>
+
+</RelativeLayout>
