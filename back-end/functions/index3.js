@@ -84,7 +84,7 @@ function tabMax(tab){
 			v = 0;
 		}
 		else {
-			if (tab[i] > v){
+			if (tab[i] > tab[v]){
 				v = i;
 			}
 		}
