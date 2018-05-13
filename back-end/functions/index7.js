@@ -38,11 +38,8 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 	//console.log("Score is : ",score);
 	var tab0 = [];
 	var tab1 = [];
-	var l = firebase.database().ref("users").length;
-	console.log("length : " , l);
 	var HS = firebase.database().ref("users");
-	HS.orderByChild("score").once("value", function(snapshot) {console.log(snapshot.key + " : " + snapshot.val().score);});
-	firebase.database().ref("users").once("value").then(function(snapshot) {
+	HS.orderByChild("score").once("value").then(function(snapshot) {
     	snapshot.forEach(function(childSnapshot) {	
       	var key = childSnapshot.key;
       	var childData = childSnapshot.val();
@@ -58,19 +55,3 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 
 	});
 });
-
-function tabMax(tab){
-	var max;
-	var v;
-	for (i=0; i<tab.length; i++) {
-		if (i == 0) {
-			v = 0;
-		}
-		else {
-			if (tab[i] > tab[v]){
-				v = i;
-			}
-		}
-	}
-	return v;
-}
