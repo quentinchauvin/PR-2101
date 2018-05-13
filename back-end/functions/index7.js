@@ -36,22 +36,19 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 
 	//const score = event.data.val();
 	//console.log("Score is : ",score);
-	var tab0 = [];
-	var tab1 = [];
 	var HS = firebase.database().ref("users");
+	var i = 1;
 	HS.orderByChild("score").once("value").then(function(snapshot) {
     	snapshot.forEach(function(childSnapshot) {	
       	var key = childSnapshot.key;
       	var childData = childSnapshot.val();
 		
-		tab0.push(key);
-		tab1.push(childSnapshot.child("score").val());
+		HS.child(key).update({rank: i});
+		i++;
+		
       	console.log("Donnees de ",key," : ",childData);
 		var score = childSnapshot.child("score").val();
 		console.log("Score : ",score);
   		});
-		
-
-
 	});
 });
