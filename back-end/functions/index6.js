@@ -62,6 +62,7 @@ exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
 		}
 		else {
 			tab0.splice(tabMax(tab1),1);
+			tab1.splice(tabMax(tab1),1);
 			tab2.push(tab0[tabMax(tab1)]);	
 			tab3.push(tab1[tabMax(tab1)]);
 		}
