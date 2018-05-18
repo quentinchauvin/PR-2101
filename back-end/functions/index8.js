@@ -31,7 +31,7 @@ exports.makeUppercase = functions.database.ref('/messages/{pushId}/original').on
   return event.data.ref.parent.child('uppercase').set(uppercase);
 });
 
-exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
+exports.test = functions.database.ref('/users/{pushId}/score').onWrite((event) => {
 	console.log("onWrite listener OK");
 
 	//const score = event.data.val();
