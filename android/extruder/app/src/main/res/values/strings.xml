@@ -1,8 +1,13 @@
 <resources>
-    <string name="app_name">extruder</string>
-    <string name="refresh">refresh</string>
+    <string name="app_name">Ecofil</string>
+    <string name="refresh">Refresh</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="no_account_yet_create_one">No account yet? Create one</string>
-    <string name="email">Email</string>
+    <string name="email" translatable="false">Email</string>
+
+    <string name="facebook_app_id" translatable="false">1847566622202376</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb1847566622202376</string>
+    <string name="bounded">Bounded</string>
+
 </resources>

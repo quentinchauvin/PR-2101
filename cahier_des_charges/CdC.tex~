@@ -4,28 +4,22 @@
 \usepackage{lmodern,textcomp}
 \usepackage[french]{babel}
 \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
-\title{Cahier des Charges de Projet\\PR-2101}
-\author{Q. CHAUVIN, J. LEFEVRE, V. THAK}
+\title{Lettre de motivation\\Candidature à la présidence du Club Cinéma}
+\author{Josselin LEFÈVRE}
 
 \begin{document}
 
 \maketitle
-%\tableofcontents
 
-\begin{abstract}
-(Vision globale du projet)
-L'objectif est de concevoir et de réaliser une machine de bureau recyclant les déchets plastiques\footnote{Uniquement ceux qui ne dégagent pas de gaz nocifs et qui sont utilisables dans l'impression 3D.} afin de produire du filament utilisables par les imprimantes 3D à "dépot de matières fondue". 
-\end{abstract}
+Je suis arrivé l'année dernière en tant que E1 à ESIEE Paris. En début d'année dernière, j'ai été dégouté par la promesse d'associatif qui n'a, selon moi, pas été tenue. Aussi, j'ai décidé fin d'année dernière de prendre les choses en main et de faire avancer l'associatif de l'intérieur. C'est pour cela que je suis devenu le secrétaire de l'Association Esieespace.\\
 
-\section{Adaptation du projet sur un projet déjà existant}
+Je me porte candidat à la présidence du Club Cinéma aux côtés de mon ami Victor Thak parce que nous sommes tous deux friand des produits du septième art. Nous parlons souvent cinéma et nous voulons intensifier l'utilisation du Marcel Dassault que nous considérons comme une chance inouïe pour les élèves de l'ESIEE de pouvoir accéder à une expérience de visionnage de qualité, et ce gracieusement. De plus, l'avantage d'un club est de bénéficier de dotations qui pourraient permettre de financer un compte Netflix. Cette plateforme prend de plus en plus d'ampleur en proposant une large gamme de série mais aussi de plus en plus de films en exclusivité comme pour les films de Scorsese les plus récents. Cette évolution correspond tout à fait à la structure du Club Cinéma. Ainsi, nous pensons que les étudiants seraient intéréssés par le fait de pouvoir accéder à tous ces films et séries.\\ 
 
-FDM :technique consiste à faire fondre un filament de thermoplastique (généralement un plastique type ABS ou PLA) à travers une buse (ou extrudeur) chauffée à une température variant entre 160 et 400 \textdegree C suivant la température de plasticité du polymère. Le fil en fusion, d'un diamètre de l'ordre du dixième de millimètre , est déposé sur le modèle et vient se coller par re-fusion sur la couche précédente .
+Je fais partie, depuis le début de ma première année, de la Tech, un des pôles du Club Fonzy. C'est selon moi une expérience très enrichissante autant sur le plan technique que sur le plan humain. Cette expérience m'a permis de savoir à quelles personnes m'adresser que ce soit dans l'associatif, l'administratif ou encore le SMIG (Services des Moyens Informatiques Généraux). C'est dailleurs grâce à ce club que j'ai pu obtenir mon habilitation Marcel Dassault. J'ai ainsi pu assurer de nombreuses préstations notamment pour les électives Théâtre et Réalisation de Vidéo. Aussi, je suis à l'aise avec le matériel audiovisuel du Marcel Dassault et j'entretiens de bonnes relations avec le responsable du service audioviseul :  Van Alfonse VO.\\
 
-\section{Utilistation de solutions techniques déjà existantes}
+Dans le cadre de la semaine d'élection à laquelle j'ai partcipé aux côtés de la liste Frost j'ai pu me former au VJing en utilisant l'écran Tech et un vidéo-projecteur prété par Van Alfonse. Je pense que ce matériel peut offrir des opportunités intéressantes comme par exemple la possibilité de faire des projections en plein air pendant l'été. Mais je ne m'avance pas trop sur le sujet pour l'instant.\\
 
-\section{Présentation détaillé du projet}
-\subsection{Descrition des contraintes}
-\subsection{Planification des taches}
-\section{Prise en charge des coûts}
+En tant que sécretaire de l'Associatin Esieespace et co-reponsable communication de la Sumobot je maîtrise les outils de communication que sont les news BDE et bien évidemment Facebook. Ces outils sont indispensables se doivent d'être accompagnés le bouche à oreille. Le simple fait de parler d'une projection, voir du club, autour de nous devrait permettre d'accroître les nombres de personnes touchées par nos evènements. Cela peut passer par flyer dans la cantine ou dans la rue.\\
+
 
 \end{document}

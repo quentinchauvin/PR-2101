@@ -1,3 +1,4 @@
+
 var firebase = require("firebase");
 
 var config = {
@@ -23,69 +24,32 @@ exports.addMessage = functions.https.onRequest((req, res) => {
 });
 
 
-exports.makeUppercase = functions.database.ref('/messages/{pushId}/original').onWrite((event) => {
+exports.makeUppercase = functions.database.ref('/messages/{userd}/original').onWrite((event) => {
   const original = event.data.val();
   console.log('Uppercasing', event.params.pushId, original);
   const uppercase = original.toUpperCase();
   return event.data.ref.parent.child('uppercase').set(uppercase);
 });
 
-exports.test = functions.database.ref('/users/jojo/score').onWrite((event) => {
+exports.rank_sort = functions.database.ref('/users/{pushId}/score').onWrite((event) => {
 	console.log("onWrite listener OK");
 
-	const score = event.data.val();
-	console.log("Score is : ",score);
-	var tab0 = [];
-	var tab1 = [];
-	var i = 0;
-	firebase.database().ref("users").once("value").then(function(snapshot) {
+	//const score = event.data.val();
+	//console.log("Score is : ",score);
+	var HS = firebase.database().ref("users");
+	var i = 1;
+	HS.orderByChild("score").once("value").then(function(snapshot) {
     	snapshot.forEach(function(childSnapshot) {	
       	var key = childSnapshot.key;
       	var childData = childSnapshot.val();
-	tab0[i] = key;
-	tab1[i] = childSnapshot.child("score").val();
-	i++;
-	console.log("i : ", i);
-      	console.log("Données de ",key," : ",childData);
-
+		
+		HS.child(key).update({rank: i});
+		i++;
+		
+      	console.log("Donnees de ",key," : ",childData);
 		var score = childSnapshot.child("score").val();
 		console.log("Score : ",score);
   		});
 	});
-
-	console.log("Fin de la recup de data");
-	var tab2 = [];
-	var tab3 = [];
-	for (i=0; i<tab0.length; i++){
-	 	if (i==0){
-			tab2[i]=tab0[tabMax(tab0)];
-			tab3[i]=tab1[tabMax(tab0)];
-		}
-		else {
-			tab0.splice(tabMax(tab0),1);
-			tab2[i]=tab0[tabMax(tab0)];	
-			tab3[i]=tab1[tabMax(tab0)];
-		}
-			
-	}
-	console.log("tab");
-	for (i=0; i<tab2.length; i++) {	
-		console.log("Joueur : ",tab3[i] ,"Score : ", tab2[i]);	
-	}
 });
 
-function tabMax(tab){
-	var max;
-	var v;
-	for (i=0; i<tab.length; i++) {
-		if (i == 0) {
-			v = 0;
-		}
-		else {
-			if (tab[i] > v){
-				v = i;
-			}
-		}
-	}
-	return v;
-}

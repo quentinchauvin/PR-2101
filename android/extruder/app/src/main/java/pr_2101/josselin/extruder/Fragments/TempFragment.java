@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import pr_2101.josselin.extruder.R;
 
@@ -15,9 +16,10 @@ import pr_2101.josselin.extruder.R;
  * Created by josselin on 31/03/18.
  */
 
-public class TempFragment extends FeedBackFragment{
+public class TempFragment extends FeedBackFragment {
 
     private int mParam1;
+    private TextView mTextView;
 
     public TempFragment() {
         // Required empty public constructor
@@ -44,6 +46,13 @@ public class TempFragment extends FeedBackFragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_temp, container, false);
+        setValueLayout((TextView) view.findViewById(R.id.value));
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getFragmentInteractionListener().onFragmentInteraction(FeedBackFragment.TEMP);
+            }
+        });
 
         return view;
     }

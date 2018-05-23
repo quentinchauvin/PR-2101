@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ecofil</string>
+    <string name="bounded">Appairé</string>
+    <string name="login">S\'identifier</string>
+    <string name="password">Mot de passe</string>
+    <string name="refresh">Rafraîchir</string>
+    <string name="no_account_yet_create_one">Pas encore de compte ? En créer un</string>
+</resources>

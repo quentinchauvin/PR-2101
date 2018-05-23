@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.2.5)  26 MAR 2018 21:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2018.2.5)  19 APR 2018 00:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -571,7 +571,7 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
@@ -624,9 +624,9 @@ LaTeX Info: Redefining \dots on input line 10.
 LaTeX Info: Redefining \up on input line 10.
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: dvips
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -684,50 +684,26 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 12.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 12.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 17.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 17.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 17.
+)
+*
+! Emergency stop.
+<*> CdC.tex
+           
+End of file on the terminal!
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 20--21
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
-
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./CdC.aux) ) 
+ 
 Here is how much of TeX's memory you used:
- 2938 strings out of 494924
- 39165 string characters out of 6179709
- 96751 words of memory out of 5000000
- 6217 multiletter control sequences out of 15000+600000
- 24738 words of font info for 29 fonts, out of 8000000 for 9000
+ 2961 strings out of 494925
+ 39445 string characters out of 6179735
+ 93748 words of memory out of 5000000
+ 6232 multiletter control sequences out of 15000+600000
+ 53495 words of font info for 44 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 28i,6n,30p,942b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/t
-exmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/public/lm/lmr10
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmr17.pfb>
-Output written on CdC.pdf (1 page, 84439 bytes).
-PDF statistics:
- 21 PDF objects out of 1000 (max. 8388607)
- 14 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 28i,6n,30p,451b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.

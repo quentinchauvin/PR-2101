@@ -1,5 +1,6 @@
 package pr_2101.josselin.extruder.Fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,8 +15,7 @@ import pr_2101.josselin.extruder.R;
  */
 
 public class GasFragment extends FeedBackFragment{
-
-    private int mParam1;
+    TextView mTextView;
 
     public GasFragment() {
         // Required empty public constructor
@@ -32,9 +32,11 @@ public class GasFragment extends FeedBackFragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getInt("jean");
-        }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
     }
 
     @Override
@@ -42,12 +44,11 @@ public class GasFragment extends FeedBackFragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gas, container, false);
-        ((TextView) view.findViewById(R.id.value)).setText("8.2");
         setValueLayout(((TextView) view.findViewById(R.id.value)));
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setValue(2.1);
+                getFragmentInteractionListener().onFragmentInteraction(FeedBackFragment.GAS);
             }
         });
 

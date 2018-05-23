@@ -5,16 +5,11 @@
     // The width and color of the border
     <solid
         android:width="4dp"
-        android:color="#2196F3" />
+        android:color="#fff" />
 
     // The desired corner radius. reduce it to keep it less rounded
     <corners android:radius="10dp" />
 
-    <gradient
-        android:startColor="#ff2d9a59"
-        android:centerColor="#ff42959a"
-        android:endColor="#ff23729a"
-        android:angle="135"/>
 
     // Add your desired padding
     <padding
