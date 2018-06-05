@@ -20,7 +20,7 @@ exports.addMessage = functions.https.onRequest((req, res) => {
   return admin.database().ref('/messages').push({original: original}).then((snapshot) => {
     return res.redirect(303, snapshot.ref);
   });
-  console.log("heyyyyyyyyyyyyyyyyyyyy");
+  console.log("oof");
 });
 
 
