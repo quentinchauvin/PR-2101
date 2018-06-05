@@ -37,7 +37,6 @@ exports.rank = functions.database.ref('/users/{pushId}/score').onWrite((event) =
 	var HS = firebase.database().ref("users");
 	HS.orderByChild("score").once("value").then(function(snapshot) {
 	var i = snapshot.numChildren();
-	console.log("i = ",i);
     	snapshot.forEach(function(childSnapshot) {	
       	var key = childSnapshot.key;
       	var childData = childSnapshot.val();
