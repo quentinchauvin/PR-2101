@@ -21,18 +21,26 @@ import pr_2101.josselin.extruder.FeedBackScheduled;
 import pr_2101.josselin.extruder.Fragments.CoilFragment;
 import pr_2101.josselin.extruder.Fragments.FeedBackFragment;
 import pr_2101.josselin.extruder.Fragments.GasFragment;
+import pr_2101.josselin.extruder.Fragments.RankFragment;
 import pr_2101.josselin.extruder.Fragments.TempFragment;
+import pr_2101.josselin.extruder.OnRetrieveUsersListener;
 import pr_2101.josselin.extruder.R;
 import pr_2101.josselin.extruder.Usr;
 import pr_2101.josselin.extruder.Utils.GraphUtils;
 
-public class FeedbackActivity extends BluetoothActivity implements FeedBackFragment.OnFragmentInteractionListener {
+public class FeedbackActivity extends BluetoothActivity implements FeedBackFragment.OnFragmentInteractionListener, OnRetrieveUsersListener {
     private Random rand = new Random();
     private static final String TAG = "FeedBackActivity";
+    private CoilFragment coilFragment;
     private GasFragment gasFragment;
     private TempFragment tempFragment;
+    private RankFragment rankFragment;
+    private boolean feedBacksDisplayed;
+
+
     private BottomSheetBehavior behavior;
     private DatabaseHelper mDbHelper;
+    private boolean b = true;
 
     private float[] meters = {30, 10, 15, 20, 35, 25, 13, 24, 23, 34, 12, 27, 23, 12, 55, 23, 21, 43, 30, 10, 15, 20, 35, 25, 13, 24, 23, 34, 12, 27, 23, 12, 55, 23, 21, 43};
     private String[] days = new String[]{"01/01", "03/02", "06/02", "09/03", "12/03", "15/04", "18/04",
@@ -47,10 +55,13 @@ public class FeedbackActivity extends BluetoothActivity implements FeedBackFragm
                 Log.e(TAG, dd + "");
             }*/
             assert d != null;
-            //tempFragment.setValue(d[0]);
-            //gasFragment.setValue(d[2]);
+            if (b) {
+                tempFragment.setValue(d[0], d[1]);
+                coilFragment.setValue(d[2]);
+                gasFragment.setValue(d[3]);
+            }
 
-            refreshChartValues();
+            //refreshChartValues();
 
             Chart line = findViewById(R.id.column);
             GraphUtils.configChart(line, GraphUtils.CONFIG_GAS, meters, days, GraphUtils.hasLabel());
@@ -71,12 +82,16 @@ public class FeedbackActivity extends BluetoothActivity implements FeedBackFragm
 
         tempFragment = new TempFragment();
         gasFragment = new GasFragment();
-        CoilFragment coilFragment = new CoilFragment();
+        coilFragment = new CoilFragment();
+        rankFragment = new RankFragment();
+
 
         fragmentTransaction.add(R.id.temp, tempFragment);
         fragmentTransaction.add(R.id.gas, gasFragment);
         fragmentTransaction.add(R.id.coil, coilFragment);
         fragmentTransaction.commit();
+
+        feedBacksDisplayed = true;
 
         //////////////////////////////////////////////////////////////////////
         //BottomSheet
@@ -90,7 +105,7 @@ public class FeedbackActivity extends BluetoothActivity implements FeedBackFragm
         //Chart
         //////////////////////////////////////////////////////////////////////
 
-        Chart chart = findViewById(R.id.chart);
+        final Chart chart = findViewById(R.id.chart);
         GraphUtils.configChart(chart, GraphUtils.CONFIG_COIL, meters, days, GraphUtils.hasLabel());
 
         //////////////////////////////////////////////////////////////////////
@@ -143,6 +158,21 @@ public class FeedbackActivity extends BluetoothActivity implements FeedBackFragm
                 model.showBadge();
 
                 getConnectThread().setColor();
+
+                switch (index) {
+                    case 0:
+                        if (!feedBacksDisplayed) {
+                            displayFeedBack();
+                            feedBacksDisplayed = true;
+                        }
+                        break;
+                    case 3:
+                        if (feedBacksDisplayed) {
+                            displayRank();
+                            feedBacksDisplayed = false;
+                        }
+                        break;
+                }
             }
 
             @Override
@@ -150,6 +180,26 @@ public class FeedbackActivity extends BluetoothActivity implements FeedBackFragm
             }
         });
 
+    }
+
+    public void displayFeedBack() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.temp, tempFragment);
+        fragmentTransaction.add(R.id.gas, gasFragment);
+        fragmentTransaction.add(R.id.coil, coilFragment);
+        fragmentTransaction.commit();
+    }
+
+    public void displayRank() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.replace(R.id.temp, rankFragment);
+        fragmentTransaction.remove(gasFragment);
+        fragmentTransaction.remove(coilFragment);
+        fragmentTransaction.commit();
     }
 
     @Override
@@ -170,12 +220,17 @@ public class FeedbackActivity extends BluetoothActivity implements FeedBackFragm
                 break;
         }
 
-        if (behavior.getState() == BottomSheetBehavior.STATE_EXPANDED)
+        if (behavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
             behavior.setState(BottomSheetBehavior.STATE_HIDDEN);
-        else behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            refreshChartValues();
+            b = !b;
+        } else {
+            behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            b = !b;
+        }
     }
 
-    private void refreshChartValues(){
+    private void refreshChartValues() {
 
         ArrayList<Float> dist = new ArrayList<>();
         ArrayList<String> hour = new ArrayList<>();
@@ -190,15 +245,20 @@ public class FeedbackActivity extends BluetoothActivity implements FeedBackFragm
         float[] dd = new float[dist.size()];
         String[] ss = new String[hour.size()];
 
-        for (int i = 0 ; i < dist.size() ; i++){
+        for (int i = 0; i < dist.size(); i++) {
             dd[i] = dist.get(i);
-            Log.wtf(TAG, dd[i]+"");
+            Log.wtf(TAG, dd[i] + "");
 
             ss[i] = String.valueOf(hour.get(i));
             Log.wtf(TAG, ss[i]);
         }
 
         days = ss;
-        meters =dd;
+        meters = dd;
+    }
+
+    @Override
+    public void onRetrieveUsers(ArrayList<Usr> users) {
+        rankFragment.displayUsers(users);
     }
 }

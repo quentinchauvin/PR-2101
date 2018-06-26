@@ -62,7 +62,7 @@ public class DataRetrieveRunnable implements Runnable {
                             } else Log.i(TAG, "no");
 
                             if (this.mOnDataRetrievedListener != null) {
-                                this.mOnDataRetrievedListener.onDataRetrieved(d[0], d[1], d[2]);
+                                this.mOnDataRetrievedListener.onDataRetrieved(d[0], d[1], d[2], d[3]);
                             }
                         }
                     } catch (IOException | NullPointerException e) {
@@ -84,7 +84,7 @@ public class DataRetrieveRunnable implements Runnable {
 
     public interface OnDataRetrievedListener {
 
-        void onDataRetrieved(final double temp, final double dist, final double gas);
+        void onDataRetrieved(final double hotend_temp, final double pipe_temp, final double dist, final double gas);
 
     }
 
@@ -93,10 +93,13 @@ public class DataRetrieveRunnable implements Runnable {
         String[] frag1 = _soup.split("t");
         double tmp = Double.parseDouble(frag1[0]);
 
-        String[] frag2 = frag1[1].split("d");
-        double dist = Double.parseDouble(frag2[0]);
-        double gas = Double.parseDouble(frag2[1].split("g")[0]);
+        String[] frag2 = frag1[1].split("p");
+        double pipe = Double.parseDouble(frag2[0]);
 
-        return new double[]{tmp, dist, gas};
+        String[] frag3 = frag2[1].split("d");
+        double dist = Double.parseDouble(frag3[0]);
+        double gas = Double.parseDouble(frag3[1].split("g")[0]);
+
+        return new double[]{tmp, pipe, dist, gas};
     }
 }

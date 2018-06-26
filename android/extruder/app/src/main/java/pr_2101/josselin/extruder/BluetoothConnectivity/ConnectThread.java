@@ -69,9 +69,10 @@ public class ConnectThread extends Thread {
         DataRetrieveRunnable runnable = new DataRetrieveRunnable(mSocket, context);
         runnable.setOnDataRetrievedListener(new DataRetrieveRunnable.OnDataRetrievedListener() {
             @Override
-            public void onDataRetrieved(double temp, double dist, double gas) {
-                Log.i(TAG, "temp : " + temp + " dist : " + dist + " gas : " + gas);
-                threadMessage(new double[]{temp, dist, gas});
+            public void onDataRetrieved(double hotend_temp, double pipe_temp, double dist, double gas) {
+                Log.i(TAG, "hotend temp : " + hotend_temp + " pipe temp : " + pipe_temp +
+                        " dist : " + dist + " gas : " + gas);
+                threadMessage(new double[]{hotend_temp, pipe_temp, dist, gas});
             }
         });
         Thread t = new Thread(runnable);

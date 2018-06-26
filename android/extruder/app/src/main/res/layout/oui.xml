@@ -1,0 +1,38 @@
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_row1"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:layout_alignParentTop="true"
+    android:layout_marginTop="10dp"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/temp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:elevation="8dp"
+        android:padding="5dp"/>
+
+    <RelativeLayout
+        android:id="@+id/gas"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:elevation="8dp"
+        android:padding="5dp">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/coil"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:elevation="8dp"
+        android:padding="5dp" />
+
+</LinearLayout>

@@ -46,7 +46,8 @@ public class TempFragment extends FeedBackFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_temp, container, false);
-        setValueLayout((TextView) view.findViewById(R.id.value));
+        setValueLayout((TextView) view.findViewById(R.id.hothead_value),
+                (TextView) view.findViewById(R.id.pipe_value));
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

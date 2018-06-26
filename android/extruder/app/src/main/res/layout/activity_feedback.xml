@@ -1,111 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#009688"
     android:orientation="vertical">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:id="@+id/ll_row1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteY="58dp">
-
-        <RelativeLayout
-            android:id="@+id/gas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:elevation="8dp"
-            android:padding="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline2"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/guideline3"
-            app:layout_constraintTop_toTopOf="parent">
-            <!-- Add contents here-->
-        </RelativeLayout>
+        android:layout_marginTop="0dp"
+        android:orientation="vertical">
 
         <RelativeLayout
             android:id="@+id/temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_weight="1"
-            android:elevation="8dp"
-            android:padding="5dp"
-            app:layout_constraintBottom_toTopOf="@+id/guideline2"
-            app:layout_constraintEnd_toStartOf="@+id/guideline3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <!-- Add contents here-->
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"/>
+
+        <RelativeLayout
+            android:id="@+id/gas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp">
         </RelativeLayout>
-
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="40dp"
-            app:layout_constraintGuide_percent="0.5" />
-
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_end="0dp" />
 
         <RelativeLayout
             android:id="@+id/coil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:elevation="8dp"
-            android:padding="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/gas"
-            app:layout_constraintStart_toEndOf="@+id/temp"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp" />
 
-        <android.support.constraint.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5" />
-
-    </android.support.constraint.ConstraintLayout>
-
-
-    <!--<RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="60dp"
-        android:gravity="bottom">
-
-        <lecho.lib.hellocharts.view.ColumnChartView
-            android:id="@+id/chart"
-            android:layout_width="match_parent"
-            android:layout_height="250dp" />
-
-    </RelativeLayout>-->
+    </LinearLayout>
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/test11"
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:layout_marginTop="500dp"
-        android:paddingTop="30dp"
         android:background="#fff"
+        android:paddingTop="30dp"
         app:layout_behavior="BottomSheetBehavior">
 
         <RelativeLayout

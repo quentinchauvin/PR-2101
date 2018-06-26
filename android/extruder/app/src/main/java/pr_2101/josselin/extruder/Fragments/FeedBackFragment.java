@@ -18,6 +18,7 @@ import pr_2101.josselin.extruder.R;
 
 public class FeedBackFragment extends Fragment {
     private TextView valueLayout;
+    private TextView valueLayout2;
     private OnFragmentInteractionListener mListener;
 
     public final static short TEMP = 1;
@@ -48,8 +49,16 @@ public class FeedBackFragment extends Fragment {
 
     public TextView getValueLayout(){ return valueLayout; }
     public void setValueLayout(final TextView view){ valueLayout = view; }
+    public void setValueLayout(final TextView view1, final TextView view2) {
+        valueLayout = view1;
+        valueLayout2 =view2;
+    }
     public void setValue(final double value){
         getValueLayout().setText(value+"");
+    }
+    public void setValue(final double value1, final double value2){
+        valueLayout.setText(value1+"");
+        valueLayout2.setText(value2+"");
     }
 
     public OnFragmentInteractionListener getFragmentInteractionListener(){

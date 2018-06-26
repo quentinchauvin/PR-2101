@@ -1,6 +1,7 @@
 package pr_2101.josselin.extruder;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -94,7 +95,7 @@ public class Usr {
                     for (DataSnapshot usr : dataSnapshot.getChildren()) {
                         users.add(new Usr(usr));
                     }
-                    listener.onRetrieveUsers(users);
+                    listener.onRetrieveUsers(sortByRank(users));
                 }
 
                 @Override
@@ -103,5 +104,24 @@ public class Usr {
                 }
             });
         }
+    }
+
+    private static ArrayList<Usr> sortByRank(ArrayList<Usr> _usrs) {
+        if (_usrs.get(1).getRank() != -1) {
+            ArrayList<Usr> users = new ArrayList<>();
+
+            for (int i = 0; i < _usrs.size(); i++) {
+                for (Usr usr : _usrs) {
+                    if (usr.rank == -1)
+                        return _usrs;
+
+                    if (usr.getRank() - 1 == i) {
+                        users.add(i, usr);
+                    }
+                }
+            }
+            return users;
+        }
+        return _usrs;
     }
 }
